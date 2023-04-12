@@ -9,7 +9,7 @@ export const App = () => {
   const [filter, setFilter] = useState('');
 
   const AddingContact = contact => {
-    setContacts([...contacts, contact]);
+    setContacts(prevContacts => [...prevContacts, contact]);
   };
 
   const changeFIlter = e => {
@@ -25,7 +25,7 @@ export const App = () => {
   };
 
   const deleteContacts = contactId => {
-    setContacts(contacts.filter(el => el.id !== contactId));
+    setContacts(prevContacts => prevContacts.filter(el => el.id !== contactId));
   };
 
   const visibleContact = getVisibleContact();
