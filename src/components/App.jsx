@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { useLocalStorage } from '../customHooks/useLocalStorage';
 
 export const App = () => {
-  const [contacts, setContacts] = useLocalStorage('contacts', '');
+  const [contacts, setContacts] = useLocalStorage('contacts', []);
   const [filter, setFilter] = useState('');
 
   const AddingContact = contact => {
